@@ -10,6 +10,13 @@
 		655FD99D194402C7005A4F6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD99C194402C7005A4F6E /* AppDelegate.swift */; };
 		655FD99F194402C7005A4F6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655FD99E194402C7005A4F6E /* Images.xcassets */; };
 		655FD9AB194402C7005A4F6E /* ARVCollectionViewLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD9AA194402C7005A4F6E /* ARVCollectionViewLayoutTests.swift */; };
+		655FD9B5194402F0005A4F6E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655FD9B4194402F0005A4F6E /* Storyboard.storyboard */; };
+		655FD9B81944037F005A4F6E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD9B71944037F005A4F6E /* CollectionViewController.swift */; };
+		655FD9BA1944045A005A4F6E /* ARVCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD9B91944045A005A4F6E /* ARVCollectionViewLayout.swift */; };
+		655FD9BC19440487005A4F6E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD9BB19440487005A4F6E /* CollectionViewCell.swift */; };
+		65CB6D7A1946E8EF0087F22F /* FullScreenCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB6D791946E8EF0087F22F /* FullScreenCollectionViewController.swift */; };
+		65CB6D7C1946F31B0087F22F /* CollectionNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */; };
+		65EC7CAD19471F6000D83F1C /* CollectionViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +37,14 @@
 		655FD9A4194402C7005A4F6E /* ARVCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARVCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		655FD9A9194402C7005A4F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655FD9AA194402C7005A4F6E /* ARVCollectionViewLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVCollectionViewLayoutTests.swift; sourceTree = "<group>"; };
+		655FD9B4194402F0005A4F6E /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		655FD9B71944037F005A4F6E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		655FD9B91944045A005A4F6E /* ARVCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVCollectionViewLayout.swift; sourceTree = "<group>"; };
+		655FD9BB19440487005A4F6E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		655FD9BD194406E4005A4F6E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../playgrounds/MyPlayground.playground; sourceTree = "<group>"; };
+		65CB6D791946E8EF0087F22F /* FullScreenCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenCollectionViewController.swift; sourceTree = "<group>"; };
+		65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNavigationViewController.swift; sourceTree = "<group>"; };
+		65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +86,7 @@
 		655FD999194402C7005A4F6E /* ARVCollectionViewLayout */ = {
 			isa = PBXGroup;
 			children = (
+				655FD9B61944033A005A4F6E /* Example */,
 				655FD99C194402C7005A4F6E /* AppDelegate.swift */,
 				655FD99E194402C7005A4F6E /* Images.xcassets */,
 				655FD99A194402C7005A4F6E /* Supporting Files */,
@@ -101,6 +117,21 @@
 				655FD9A9194402C7005A4F6E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		655FD9B61944033A005A4F6E /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				655FD9B71944037F005A4F6E /* CollectionViewController.swift */,
+				65CB6D791946E8EF0087F22F /* FullScreenCollectionViewController.swift */,
+				655FD9BD194406E4005A4F6E /* MyPlayground.playground */,
+				655FD9B4194402F0005A4F6E /* Storyboard.storyboard */,
+				655FD9B91944045A005A4F6E /* ARVCollectionViewLayout.swift */,
+				655FD9BB19440487005A4F6E /* CollectionViewCell.swift */,
+				65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */,
+				65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655FD99F194402C7005A4F6E /* Images.xcassets in Resources */,
+				655FD9B5194402F0005A4F6E /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CB6D7C1946F31B0087F22F /* CollectionNavigationViewController.swift in Sources */,
+				65CB6D7A1946E8EF0087F22F /* FullScreenCollectionViewController.swift in Sources */,
+				655FD9BA1944045A005A4F6E /* ARVCollectionViewLayout.swift in Sources */,
+				655FD9B81944037F005A4F6E /* CollectionViewController.swift in Sources */,
+				655FD9BC19440487005A4F6E /* CollectionViewCell.swift in Sources */,
 				655FD99D194402C7005A4F6E /* AppDelegate.swift in Sources */,
+				65EC7CAD19471F6000D83F1C /* CollectionViewAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +417,7 @@
 				655FD9B0194402C7005A4F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		655FD9B1194402C7005A4F6E /* Build configuration list for PBXNativeTarget "ARVCollectionViewLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +426,7 @@
 				655FD9B3194402C7005A4F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
