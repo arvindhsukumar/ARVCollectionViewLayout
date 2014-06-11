@@ -11,8 +11,12 @@ import UIKit
 class CollectionNavigationViewController: UINavigationController, UINavigationControllerDelegate {
 	
 	var animator:CollectionViewAnimator
+	var hideAnimator: CollectionViewHideAnimator
+
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
 		self.animator = CollectionViewAnimator();
+		self.hideAnimator = CollectionViewHideAnimator()
+
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 		self.delegate = self
 
@@ -20,7 +24,9 @@ class CollectionNavigationViewController: UINavigationController, UINavigationCo
     }
 	
 	init(coder aDecoder: NSCoder!) {
-		self.animator = CollectionViewAnimator();
+		self.animator = CollectionViewAnimator()
+		self.hideAnimator = CollectionViewHideAnimator()
+
 		super.init(coder: aDecoder)
 		self.delegate = self
 		
@@ -44,8 +50,11 @@ class CollectionNavigationViewController: UINavigationController, UINavigationCo
 	
 	func navigationController(navigationController: UINavigationController!, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController!, toViewController toVC: UIViewController!) -> UIViewControllerAnimatedTransitioning!{
 		
-		if operation == UINavigationControllerOperation.Push {
-		return self.animator;
+		if (operation == UINavigationControllerOperation.Push)  {
+			return self.animator
+		}
+		else if (operation == UINavigationControllerOperation.Pop) {
+			return self.hideAnimator
 		}
 		return nil
 		

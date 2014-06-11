@@ -33,8 +33,8 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-		println(self.useLayoutToLayoutNavigationTransitions)
-        self.collectionView.registerClass(CollectionViewCell.self , forCellWithReuseIdentifier: reuseIdentifier)
+
+		self.collectionView.registerClass(UICollectionViewCell.self , forCellWithReuseIdentifier: reuseIdentifier)
 		let layout = self.collectionView.collectionViewLayout as ARVCollectionViewLayout
 		layout.delegate = self
 		for item in 0..self.collectionView.numberOfItemsInSection(0){
@@ -55,7 +55,7 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
 	override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
 		if segue.identifier == "transitionSegue" {
 			let destination: FullScreenCollectionViewController = segue.destinationViewController as FullScreenCollectionViewController
-			destination.useLayoutToLayoutNavigationTransitions = false
+
 			destination.selectedIndexPath = selectedIndexPath
 			destination.bgColors = bgColors
 		}
@@ -97,7 +97,7 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
         let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
         // Configure the cell
-		cell.backgroundColor = bgColors[indexPath!.row]
+		cell.contentView.backgroundColor = bgColors[indexPath!.row]
     
         return cell
     }

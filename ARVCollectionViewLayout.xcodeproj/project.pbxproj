@@ -17,6 +17,7 @@
 		65CB6D7A1946E8EF0087F22F /* FullScreenCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB6D791946E8EF0087F22F /* FullScreenCollectionViewController.swift */; };
 		65CB6D7C1946F31B0087F22F /* CollectionNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */; };
 		65EC7CAD19471F6000D83F1C /* CollectionViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */; };
+		65EC7CB21948270300D83F1C /* CollectionViewHideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7CB11948270300D83F1C /* CollectionViewHideAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		65CB6D791946E8EF0087F22F /* FullScreenCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenCollectionViewController.swift; sourceTree = "<group>"; };
 		65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNavigationViewController.swift; sourceTree = "<group>"; };
 		65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewAnimator.swift; sourceTree = "<group>"; };
+		65EC7CB11948270300D83F1C /* CollectionViewHideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHideAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				655FD9BB19440487005A4F6E /* CollectionViewCell.swift */,
 				65CB6D7B1946F31B0087F22F /* CollectionNavigationViewController.swift */,
 				65EC7CAC19471F6000D83F1C /* CollectionViewAnimator.swift */,
+				65EC7CB11948270300D83F1C /* CollectionViewHideAnimator.swift */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				655FD9B81944037F005A4F6E /* CollectionViewController.swift in Sources */,
 				655FD9BC19440487005A4F6E /* CollectionViewCell.swift in Sources */,
 				655FD99D194402C7005A4F6E /* AppDelegate.swift in Sources */,
+				65EC7CB21948270300D83F1C /* CollectionViewHideAnimator.swift in Sources */,
 				65EC7CAD19471F6000D83F1C /* CollectionViewAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -74,7 +74,7 @@ class FullScreenCollectionViewController: UICollectionViewController {
         let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(fullScreenReuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
         // Configure the cell
-		cell.backgroundColor = bgColors![indexPath!.row]
+		cell.contentView.backgroundColor = bgColors![indexPath!.row]
     
         return cell
     }
