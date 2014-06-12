@@ -28,14 +28,11 @@ class CollectionViewHideAnimator: NSObject, UIViewControllerAnimatedTransitionin
 		let container = transitionContext.containerView()
 		container.addSubview(toVC.view)
 
-		//		toVC.view.alpha = 0
 		let cell = fromVC.collectionView.visibleCells()[0] as UICollectionViewCell
 		let indexPath = fromVC.collectionView.indexPathForCell(cell)
 		let attributes = fromVC.collectionView.layoutAttributesForItemAtIndexPath(indexPath)
 		let toAttributes = toVC.collectionView.layoutAttributesForItemAtIndexPath(indexPath)
 
-//		let snapshot : UIView = fromVC.collectionView.resizableSnapshotViewFromRect(attributes.frame, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsMake(10.0, 0.0, 10.0, 0.0))
-		//		let snapshot : UIView = fromVC.collectionView.resizableSnapshotViewFromRect(cell.frame, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
 		let snapshot : UIView = UIView(frame: attributes.frame)
 		snapshot.backgroundColor = cell.contentView.backgroundColor
 		snapshot.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
@@ -47,8 +44,6 @@ class CollectionViewHideAnimator: NSObject, UIViewControllerAnimatedTransitionin
 
 		UIView.animateWithDuration(self.transitionDuration(transitionContext), animations:
 			{
-				println(container.frame)
-				println(destinationRect)
 
 				snapshot.frame = destinationRect
 				//				toVC.view.alpha = 1;
