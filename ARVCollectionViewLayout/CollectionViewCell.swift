@@ -10,10 +10,14 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
 		self.backgroundColor = UIColor.whiteColor()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
 }

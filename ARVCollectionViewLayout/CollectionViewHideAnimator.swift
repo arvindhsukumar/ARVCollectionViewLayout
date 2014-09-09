@@ -11,15 +11,15 @@ import UIKit
 class CollectionViewHideAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
 	let zoomAnimationDuration = 0.3
-	init() {
+	override init() {
 		super.init()
 	}
 	
-	func transitionDuration(transitionContext: UIViewControllerContextTransitioning!) -> NSTimeInterval {
+	func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
 		return zoomAnimationDuration
 	}
 	
-	func animateTransition(transitionContext: UIViewControllerContextTransitioning!) {
+	func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
 		
 		let fromVC: FullScreenCollectionViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as FullScreenCollectionViewController
 		
@@ -28,18 +28,18 @@ class CollectionViewHideAnimator: NSObject, UIViewControllerAnimatedTransitionin
 		let container = transitionContext.containerView()
 		container.addSubview(toVC.view)
 
-		let cell = fromVC.collectionView.visibleCells()[0] as UICollectionViewCell
-		let indexPath = fromVC.collectionView.indexPathForCell(cell)
-		let attributes = fromVC.collectionView.layoutAttributesForItemAtIndexPath(indexPath)
-		let toAttributes = toVC.collectionView.layoutAttributesForItemAtIndexPath(indexPath)
+		let cell = fromVC.collectionView!.visibleCells()[0] as UICollectionViewCell
+		let indexPath = fromVC.collectionView!.indexPathForCell(cell)
+		let attributes = fromVC.collectionView!.layoutAttributesForItemAtIndexPath(indexPath!)
+		let toAttributes = toVC.collectionView!.layoutAttributesForItemAtIndexPath(indexPath!)
 
-		let snapshot : UIView = UIView(frame: attributes.frame)
+		let snapshot : UIView = UIView(frame: attributes!.frame)
 		snapshot.backgroundColor = cell.contentView.backgroundColor
 		snapshot.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
-		snapshot.frame = container.convertRect(attributes.frame, fromView: fromVC.collectionView)
+		snapshot.frame = container.convertRect(attributes!.frame, fromView: fromVC.collectionView)
 		println(snapshot.frame)
 
-		let destinationRect = container.convertRect(toAttributes.frame, fromView: toVC.collectionView)
+		let destinationRect = container.convertRect(toAttributes!.frame, fromView: toVC.collectionView)
 		container.addSubview(snapshot)
 
 		UIView.animateWithDuration(self.transitionDuration(transitionContext), animations:

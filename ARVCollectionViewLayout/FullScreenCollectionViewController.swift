@@ -11,14 +11,14 @@ import UIKit
 let fullScreenReuseIdentifier = "FSCell"
 
 class FullScreenCollectionViewController: UICollectionViewController {
-	var bgColors: UIColor[]?
-	var selectedIndexPath: NSIndexPath?
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+	var bgColors: [UIColor]?
+	var selectedIndexPath: NSIndexPath!
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
 	
-	init(coder aDecoder: NSCoder!) {
+	required init(coder aDecoder: NSCoder) {
 		
 		super.init(coder: aDecoder)
 	}
@@ -31,13 +31,13 @@ class FullScreenCollectionViewController: UICollectionViewController {
 
         // Register cell classes
 
-		self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+		self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         // Do any additional setup after loading the view.
     }
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		self.collectionView.scrollToItemAtIndexPath(selectedIndexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+		self.collectionView!.scrollToItemAtIndexPath(selectedIndexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
 
 	}
 
@@ -70,11 +70,11 @@ class FullScreenCollectionViewController: UICollectionViewController {
         return 20
     }
 
-    override func collectionView(collectionView: UICollectionView?, cellForItemAtIndexPath indexPath: NSIndexPath?) -> UICollectionViewCell? {
-        let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(fullScreenReuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(fullScreenReuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
         // Configure the cell
-		cell.contentView.backgroundColor = bgColors![indexPath!.row]
+		cell.contentView.backgroundColor = bgColors![indexPath.row]
     
         return cell
     }

@@ -11,15 +11,15 @@ import UIKit
 let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController, ARVCollectionViewLayoutDelegate {
-	var itemSizes:CGSize[] = []
-	var bgColors:UIColor[] = []
+	var itemSizes:[CGSize] = []
+	var bgColors:[UIColor] = []
 	var selectedIndexPath: NSIndexPath?
-	init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
 	
-	init(coder aDecoder: NSCoder!) {
+	required init(coder aDecoder: NSCoder) {
 
 		super.init(coder: aDecoder)
 
@@ -34,14 +34,14 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
 
         // Register cell classes
 
-		self.collectionView.registerClass(UICollectionViewCell.self , forCellWithReuseIdentifier: reuseIdentifier)
-		let layout = self.collectionView.collectionViewLayout as ARVCollectionViewLayout
+		self.collectionView!.registerClass(UICollectionViewCell.self , forCellWithReuseIdentifier: reuseIdentifier)
+		let layout = self.collectionView!.collectionViewLayout as ARVCollectionViewLayout
 		layout.delegate = self
-		for item in 0..self.collectionView.numberOfItemsInSection(0){
+		for item in 0..<self.collectionView!.numberOfItemsInSection(0){
 			let height:Int = 100 + Int(arc4random_uniform(100))
-			let size = CGSizeMake(145.0, Float(height))
+			let size = CGSizeMake(145.0, CGFloat(height))
 			itemSizes.append(size)
-			bgColors.append(UIColor(red: Float(arc4random_uniform(255))/255.0, green: Float(arc4random_uniform(255))/255.0, blue: Float(arc4random_uniform(255))/255.0, alpha: 1))
+			bgColors.append(UIColor(red: CGFloat(arc4random_uniform(255))/255.0, green: CGFloat(arc4random_uniform(255))/255.0, blue: CGFloat(arc4random_uniform(255))/255.0, alpha: 1))
 		}
 		
         // Do any additional setup after loading the view.
@@ -52,7 +52,7 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
         // Dispose of any resources that can be recreated.
     }
 
-	override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 		if segue.identifier == "transitionSegue" {
 			let destination: FullScreenCollectionViewController = segue.destinationViewController as FullScreenCollectionViewController
 
@@ -89,20 +89,20 @@ class CollectionViewController: UICollectionViewController, ARVCollectionViewLay
 		return itemSizes[item]
 	}
 	
-	func itemWidth() -> Float! {
+	func itemWidth() -> CGFloat! {
 		return 60.0;
 	}
 
-    override func collectionView(collectionView: UICollectionView?, cellForItemAtIndexPath indexPath: NSIndexPath?) -> UICollectionViewCell? {
-        let cell = collectionView?.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
         // Configure the cell
-		cell.contentView.backgroundColor = bgColors[indexPath!.row]
+		cell.contentView.backgroundColor = bgColors[indexPath.row]
     
         return cell
     }
 
-	override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+	override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 		
 		println("select \(indexPath.row)")
 		selectedIndexPath = indexPath;

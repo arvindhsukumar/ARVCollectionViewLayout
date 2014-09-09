@@ -13,7 +13,7 @@ class CollectionNavigationViewController: UINavigationController, UINavigationCo
 	var animator:CollectionViewAnimator
 	var hideAnimator: CollectionViewHideAnimator
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
 		self.animator = CollectionViewAnimator();
 		self.hideAnimator = CollectionViewHideAnimator()
 
@@ -23,7 +23,7 @@ class CollectionNavigationViewController: UINavigationController, UINavigationCo
         // Custom initialization
     }
 	
-	init(coder aDecoder: NSCoder!) {
+	required init(coder aDecoder: NSCoder) {
 		self.animator = CollectionViewAnimator()
 		self.hideAnimator = CollectionViewHideAnimator()
 
